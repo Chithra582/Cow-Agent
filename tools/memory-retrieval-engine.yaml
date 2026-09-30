@@ -1,0 +1,16 @@
+name: "memory-retrieval-engine"
+description: "Performs hybrid semantic vector and keyword search across 3-tier memory."
+input_schema:
+  type: "object"
+  properties:
+    query:
+      type: "string"
+      description: "Search query or context prompt."
+    tier:
+      type: "string"
+      description: "Target memory tier (all, core, daily, working)."
+    top_k:
+      type: "integer"
+      description: "Number of top matching memories to retrieve."
+  required:
+    - "query"

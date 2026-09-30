@@ -1,0 +1,16 @@
+name: "task-execution-planner"
+description: "Decomposes complex user goals and coordinates autonomous loop execution."
+input_schema:
+  type: "object"
+  properties:
+    goal:
+      type: "string"
+      description: "High-level goal or task to achieve."
+    max_steps:
+      type: "integer"
+      description: "Maximum planning iterations allowed."
+    require_confirmation:
+      type: "boolean"
+      description: "Whether dangerous actions require human confirmation."
+  required:
+    - "goal"

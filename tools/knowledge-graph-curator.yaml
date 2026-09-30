@@ -1,0 +1,16 @@
+name: "knowledge-graph-curator"
+description: "Manages Markdown wiki hierarchy and visual knowledge graph entities."
+input_schema:
+  type: "object"
+  properties:
+    action:
+      type: "string"
+      description: "Action to perform (ingest, link_entities, query_graph, update_index)."
+    document_path:
+      type: "string"
+      description: "Relative path to target Markdown document in knowledge/."
+    entity_data:
+      type: "object"
+      description: "Structured entity attributes and relational links."
+  required:
+    - "action"

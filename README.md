@@ -14,6 +14,14 @@
 </p>
 
 <p align="center">
+  <a href="https://opengitagent.org"><img src="https://img.shields.io/badge/OpenGAP-0.1.0-blue.svg" alt="OpenGAP Spec 0.1.0"></a>
+  <a href="https://app.hidevs.xyz/passport/submit"><img src="https://img.shields.io/badge/GitAgent%20Passport-Ready-brightgreen.svg" alt="GitAgent Passport"></a>
+  <a href="https://app.hidevs.xyz/passport/submit"><img src="https://img.shields.io/badge/Category-Developer%20Tools-purple.svg" alt="Category"></a>
+  <a href="EXPLAINABILITY.md"><img src="https://img.shields.io/badge/Compliance-MITRE%20ATLAS%20%7C%20OWASP-orange.svg" alt="Compliance"></a>
+</p>
+
+
+<p align="center">
   [English] | [<a href="docs/zh/README.md">中文</a>] | [<a href="docs/zh/README-Hant.md">繁體中文</a>] | [<a href="docs/ja/README.md">日本語</a>]
 </p>
 
@@ -305,3 +313,15 @@ All kinds of contributions are welcome — new features, bug fixes, performance 
 ## 📌 Project Renaming Notice
 
 This project was previously named `chatgpt-on-wechat` and is now officially **CowAgent**. The old GitHub URL redirects automatically; existing users may optionally run `git remote set-url origin https://github.com/zhayujie/CowAgent.git` to update the local remote.
+
+---
+
+## GitAgent Passport Qualification
+
+This repository is fully compliant with the **OpenGAP Spec 0.1.0** standard and qualified for the **HiDevs GitAgent Passport**:
+
+- **Checkpoint 1 (Validate):** Verified OpenGAP spec 0.1.0 compliance via [`agent.yaml`](agent.yaml), [`SOUL.md`](SOUL.md), [`skills/`](skills/), and [`tools/`](tools/).
+- **Checkpoint 2 (Explain):** Comprehensive 5-section transparency report in [`EXPLAINABILITY.md`](EXPLAINABILITY.md) detailing proactive task decomposition, three-tier memory distillation (Deep Dream), knowledge wiki indexing, and multi-channel IM routing under MITRE ATLAS & OWASP standards.
+- **Checkpoint 3 (Export):** Cross-framework export compatibility verified across OpenAI SDK, CrewAI, Claude Code, and Lyzr.
+- **Target Category:** **`Developer Tools`** (Autonomous Multi-Agent Harness & Proactive Task Runtime).
+

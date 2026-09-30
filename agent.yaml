@@ -1,0 +1,64 @@
+spec_version: "0.1.0"
+name: "cow-agent-harness"
+version: "1.0.0"
+description: >
+  Autonomous super AI assistant and Agent Harness reference implementation.
+  Proactively plans tasks, manages 3-tier memory with Deep Dream distillation, curates knowledge graphs,
+  and coordinates multi-agent teams across messaging channels and desktop environments.
+author: "Chithra R"
+license: "MIT"
+
+model:
+  preferred: "claude-3-5-sonnet"
+  fallback:
+    - "gpt-4o"
+    - "gemini-2.0-flash"
+  constraints:
+    temperature: 0.1
+    max_tokens: 8192
+
+skills:
+  - image-generation
+  - knowledge-wiki
+  - skill-creator
+  - three-tier-memory-manager
+
+tools:
+  - task-execution-planner
+  - memory-retrieval-engine
+  - knowledge-graph-curator
+  - im-channel-dispatcher
+
+runtime:
+  max_turns: 25
+  temperature: 0.1
+  timeout: 300
+
+compliance:
+  risk_tier: standard
+  frameworks:
+    - mitre-atlas
+    - owasp-llm
+  data_governance:
+    pii_handling: redact
+    data_classification: confidential
+  recordkeeping:
+    audit_logging: true
+    log_format: structured_json
+  supervision:
+    human_in_the_loop: conditional
+    override_capability: true
+    kill_switch: true
+
+tags:
+  - developer-tools
+  - cow-agent
+  - agent-harness
+  - multi-agent
+  - memory-distillation
+  - knowledge-graph
+  - im-gateway
+
+metadata:
+  domain: "developer-tools"
+  category: "Developer Tools"

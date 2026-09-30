@@ -1,0 +1,22 @@
+name: "im-channel-dispatcher"
+description: "Dispatches multimodal messages across WeChat, Feishu, DingTalk, Telegram, and Slack."
+input_schema:
+  type: "object"
+  properties:
+    channel:
+      type: "string"
+      description: "Target messaging platform (wechat, feishu, dingtalk, telegram, slack, web)."
+    recipient_id:
+      type: "string"
+      description: "Target user ID or chat room ID."
+    message_type:
+      type: "string"
+      description: "Message content type (text, image, voice, file, card)."
+    content:
+      type: "string"
+      description: "Text body or media resource path."
+  required:
+    - "channel"
+    - "recipient_id"
+    - "message_type"
+    - "content"
