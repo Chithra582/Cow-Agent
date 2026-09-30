@@ -1,22 +1,30 @@
-# Agent Explainability & Transparency Report
+# EXPLAINABILITY — CowAgent Harness
 
-- **Agent Name:** cow-agent-harness
-- **OpenGAP Specification:** 0.1.0
-- **Agent ID:** cow-agent-harness
-- **Domain:** Developer Tools / Autonomous Multi-Agent Harness & Proactive Task Runtime
-- **Passport Validation Tier:** Tier-1 Certified Autonomous Agent
+> **Admissibility & Transparency Report for OpenGAP / Agent Passport**  
+> *Agent Name:* CowAgent Harness (`cow-agent-harness`)  
+> *Specification:* OpenGAP v0.1.0  
+> *Domain:* Developer Tools / Autonomous Multi-Agent Harness & Proactive Task Runtime  
 
 ---
 
-## 1. Overview & Architectural Purpose
+## 1. Overview & Operational Purpose
 
 The **CowAgent Harness** (`cow-agent-harness`) is an autonomous personal AI assistant and Agent Harness reference implementation. Built to operate continuously 24/7 on local machines or cloud servers, CowAgent combines autonomous task planning, a three-tier memory architecture (Context → Daily → Core) with Deep Dream distillation, an evolving Markdown knowledge wiki and graph, custom skill creation, and multi-channel messaging gateway connectivity (WeChat, Feishu, DingTalk, WeCom, Telegram, Slack, and Web).
 
-By integrating deterministic tool calling with proactive self-evolution, CowAgent autonomously accomplishes open-ended workflows while keeping user data strictly local and auditable.
+By integrating deterministic tool calling with proactive self-evolution, CowAgent autonomously accomplishes open-ended workflows while keeping user data strictly local, sovereign, and auditable.
 
 ---
 
 ## 2. How the Agent Decides (Decision-Making Logic)
+
+CowAgent Harness operates across a deterministic, multi-stage decision pipeline:
+
+```
+[Inbound Multi-Channel Message] ──> [Task Planning & Intent Decomp] ──> [Three-Tier Memory Query]
+                                                                                  │
+                                                                                  ▼
+[Outbound Channel Delivery] <── [State & Wiki Commit] <── [Tool Exec & Confirmation]
+```
 
 ### 2.1 Proactive Task Planning & Autonomous Looping
 - **Decision:** Determines whether a user request requires single-turn execution or multi-step iterative planning with tool loops.
@@ -57,9 +65,17 @@ By integrating deterministic tool calling with proactive self-evolution, CowAgen
 | Knowledge Base Files | Markdown documents in `knowledge/` directory | Grounding knowledge and wiki cross-referencing | Maintained locally on disk, full user ownership |
 | External Tool Execution Data | Host OS shell, filesystem, web browser | Gathers live system data and executes tasks | Sandboxed execution with command confirmation gates |
 
+CowAgent Harness complies with operational security and privacy standards:
+- **No Cloud Data Exfiltration:** All personal knowledge, conversation logs, and memories remain strictly within the user's host environment.
+- **Epistemic Isolation:** Memory distillation strictly segregates personal facts from operational configuration rules.
+- **Sanitized Model Payloads:** Prompts and shell inputs undergo rigorous sanitization to neutralize command injection vectors before execution.
+- **Data Minimization:** Only relevant memory fragments and essential tool schemas are dispatched to LLM inference endpoints.
+
 ---
 
 ## 4. Known Limitations & Failure Modes
+
+Reviewers, auditors, and users should note the following operational constraints:
 
 1. **Unbounded Autonomous Looping:**
    - *Limitation:* Highly complex or ambiguous tasks might cause the agent to loop endlessly across tools.
@@ -81,7 +97,7 @@ By integrating deterministic tool calling with proactive self-evolution, CowAgen
 
 ## 5. Verification, Safety & Human Oversight
 
-- **Human-in-the-Loop Override:** Users can interrupt running task loops at any time via `/stop` or emergency keyword signals.
-- **Destructive Command Gate:** Shell commands involving file deletion (`rm`, `format`), disk partition modification, or network reconfiguration require explicit confirmation.
-- **Local Sovereignty:** All personal knowledge, conversation history, and memories remain strictly within the user's host environment.
-- **Permission Scoping:** Channel-level access controls restrict system administration capabilities strictly to verified admin user IDs.
+- **Real-Time Human Approval Gate:** Potentially destructive operations (file deletion, terminal execution, system modifications) mandate explicit human authorization before execution.
+- **Emergency Session Interrupt:** Users can immediately abort running task loops at any time via `/stop`, terminal signals, or emergency kill commands.
+- **Step Quota Guardrails:** Strict execution quotas limit maximum autonomous turns and prevent runaway recursive invocation loops.
+- **Structured Audit Logging:** Every executed shell command, tool payload, memory update, and incoming channel message is captured in immutable local audit logs.
